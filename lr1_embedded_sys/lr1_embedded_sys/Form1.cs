@@ -107,6 +107,9 @@ namespace lr1_embedded_sys
             timer.Stop();
         }
 
-        
+        private void trackOC_Scroll(object sender, EventArgs e)
+        {
+            prec_tem_pusk.Text = trackOC.Value.ToString();
+        }
     }
 }

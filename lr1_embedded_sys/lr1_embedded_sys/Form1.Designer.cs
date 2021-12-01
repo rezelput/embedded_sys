@@ -30,10 +30,10 @@ namespace lr1_embedded_sys
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadSAU));
             this.prec_tem_pusk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@ namespace lr1_embedded_sys
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.trackOC = new System.Windows.Forms.TrackBar();
             this.pusk_btn = new System.Windows.Forms.ToolStripSplitButton();
             this.start_system = new System.Windows.Forms.ToolStripMenuItem();
             this.stop_btn = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +78,7 @@ namespace lr1_embedded_sys
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackOC)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.null_rowtt)).BeginInit();
             this.SuspendLayout();
@@ -284,30 +284,30 @@ namespace lr1_embedded_sys
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(29, 247);
             this.chart1.Name = "chart1";
-            series3.BorderWidth = 5;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Color = System.Drawing.Color.Lime;
-            series3.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series3.LabelForeColor = System.Drawing.Color.Tomato;
-            series3.Legend = "Legend1";
-            series3.MarkerBorderColor = System.Drawing.Color.Red;
-            series3.Name = "Входные";
-            series4.BorderWidth = 5;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = System.Drawing.Color.Red;
-            series4.Legend = "Legend1";
-            series4.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series4.Name = "Вывод";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series5.BorderWidth = 5;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Color = System.Drawing.Color.Lime;
+            series5.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series5.LabelForeColor = System.Drawing.Color.Tomato;
+            series5.Legend = "Legend1";
+            series5.MarkerBorderColor = System.Drawing.Color.Red;
+            series5.Name = "Входные";
+            series6.BorderWidth = 5;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Color = System.Drawing.Color.Red;
+            series6.Legend = "Legend1";
+            series6.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series6.Name = "Вывод";
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
             this.chart1.Size = new System.Drawing.Size(876, 326);
             this.chart1.TabIndex = 8;
             // 
@@ -318,7 +318,7 @@ namespace lr1_embedded_sys
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.trackBar1);
+            this.groupBox5.Controls.Add(this.trackOC);
             this.groupBox5.Location = new System.Drawing.Point(939, 261);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 100);
@@ -326,12 +326,14 @@ namespace lr1_embedded_sys
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Обратная Связь (ОС)";
             // 
-            // trackBar1
+            // trackOC
             // 
-            this.trackBar1.Location = new System.Drawing.Point(7, 43);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(187, 45);
-            this.trackBar1.TabIndex = 0;
+            this.trackOC.Location = new System.Drawing.Point(7, 43);
+            this.trackOC.Maximum = 200;
+            this.trackOC.Name = "trackOC";
+            this.trackOC.Size = new System.Drawing.Size(187, 45);
+            this.trackOC.TabIndex = 0;
+            this.trackOC.Scroll += new System.EventHandler(this.trackOC_Scroll);
             // 
             // pusk_btn
             // 
@@ -436,7 +438,7 @@ namespace lr1_embedded_sys
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackOC)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.null_rowtt)).EndInit();
@@ -470,7 +472,7 @@ namespace lr1_embedded_sys
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.NumericUpDown temp_num;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackOC;
         private System.Windows.Forms.ToolStripSplitButton pusk_btn;
         private System.Windows.Forms.ToolStripMenuItem start_system;
         private System.Windows.Forms.ToolStripMenuItem stop_btn;
