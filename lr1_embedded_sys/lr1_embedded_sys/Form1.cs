@@ -11,7 +11,7 @@ namespace lr1_embedded_sys
     public partial class LoadSAU : Form
     {
 
-        double S = 2.0;
+        //double S = 2.0;
         class InsertToList
         {
             int value;
@@ -60,7 +60,8 @@ namespace lr1_embedded_sys
         private void timer_Tick(object sender, EventArgs e)
         {
             timer.Start();
-            lboc.Text = trackOC.Value + "";
+            trackstep(null, null);
+            //lboc.Text = trackOC.Value + "";
             //првоерка рандома
             /* Random random = new Random(DateTime.Now.Millisecond);
              double randtemp = random.Next(0, 41);
@@ -103,7 +104,6 @@ namespace lr1_embedded_sys
         protected void start_system_Click(object sender, EventArgs e)
         {
             timer_Tick(null,null);
-            trackOC_Scroll(null, null);
         }
 
         private void stop_btn_Click(object sender, EventArgs e)
@@ -112,20 +112,34 @@ namespace lr1_embedded_sys
         }
         double f(double s)
         {
+            Random random = new Random();
+            s = random.Next(2, 10);
             return -Math.Log(s) / s;
         }
 
         double F(double t)
         {
+            Random random = new Random();
+            t = random.Next(2, 10);
             return 1.0 / Math.Exp(2.0 * t);
         }
 
-        private void trackOC_Scroll(object sender, EventArgs e)
+        private void trackstep(object sender, EventArgs e)
         {
+
+            Random random = new Random(DateTime.Now.Millisecond);
+            double S = random.Next(2, 120); //коэффициент t
             double ttEnt = LaplaceTransform.Transform(f, S);
             double ttEnd = LaplaceTransform.InverseTransform(F, S);
-            double funcW = ttEnd / ttEnd;
-            lboc.Text = Convert.ToString(funcW);
+            double funcW = ttEnd/ttEnt ;
+            //lboc.Text = Convert.ToString(funcW);
+            TrackOC.Value = Convert.ToInt32(funcW);
+            TrackOC.PerformStep();
+            
+            //записать данные сигнала
+            double ssgnl = Convert.ToDouble(prec_tem_pusk.Text) - Convert.ToDouble(funcW);
+            signalBox.Text = Convert.ToString(ssgnl);
+
 
         }
 
@@ -141,8 +155,7 @@ namespace lr1_embedded_sys
 
         private void signalBox_TextChanged(object sender, EventArgs e)
         {
-            double ssgnl = Convert.ToDouble(prec_tem_pusk.Text) - Convert.ToDouble(lboc.Text);
-            signalBox.Text = Convert.ToString(ssgnl);
+            
 
         }
     }
