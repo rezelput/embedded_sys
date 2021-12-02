@@ -128,19 +128,21 @@ namespace lr1_embedded_sys
         {
 
             Random random = new Random(DateTime.Now.Millisecond);
-            double S = random.Next(20, 120); //коэффициент t
+            double S = random.Next(10, 60); //коэффициент t
             double ttEnt = LaplaceTransform.Transform(f, S);
             double ttEnd = LaplaceTransform.InverseTransform(F, S);
             double funcW = ttEnd/ttEnt ;
             //lboc.Text = Convert.ToString(funcW);
-            locktt.Text = Convert.ToString(funcW);
+
             //TrackOC.PerformStep(); когда-то был прогресс бар
             //трэк навигация
-            TrackOC.Value = Convert.ToInt32(funcW);
+            locktt.Text = Convert.ToString(funcW);
+            int ta = Convert.ToInt32(Convert.ToDouble(prec_tem_pusk.Text));
+            TrackOC.Value = ta;
 
             //записать данные сигнала
-            double ssgnl = Convert.ToDouble(prec_tem_pusk.Text) - Convert.ToDouble(funcW);
-            signalBox.Text = Convert.ToString(ssgnl);
+            //signalBox.Text = Convert.ToString(Convert.ToDouble(funcW));
+            //signalBox.Text = Convert.ToString(Convert.ToDouble(ssgnl));
 
 
         }
