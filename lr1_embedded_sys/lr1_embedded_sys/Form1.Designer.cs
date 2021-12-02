@@ -30,10 +30,10 @@ namespace lr1_embedded_sys
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadSAU));
             this.prec_tem_pusk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@ namespace lr1_embedded_sys
             this.enbl_boiler = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.null_rowtt = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lboc = new System.Windows.Forms.Label();
             this.regul.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -89,15 +90,16 @@ namespace lr1_embedded_sys
             this.prec_tem_pusk.Name = "prec_tem_pusk";
             this.prec_tem_pusk.Size = new System.Drawing.Size(128, 20);
             this.prec_tem_pusk.TabIndex = 1;
+            this.prec_tem_pusk.TextChanged += new System.EventHandler(this.prec_tem_pusk_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(26, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 13);
+            this.label1.Size = new System.Drawing.Size(134, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Установка температуры, %";
+            this.label1.Text = "Уставка температуры, %";
             // 
             // regul
             // 
@@ -123,17 +125,17 @@ namespace lr1_embedded_sys
             // 
             this.signalBox.Location = new System.Drawing.Point(7, 71);
             this.signalBox.Name = "signalBox";
-            this.signalBox.ReadOnly = true;
             this.signalBox.Size = new System.Drawing.Size(121, 20);
             this.signalBox.TabIndex = 0;
+            this.signalBox.TextChanged += new System.EventHandler(this.signalBox_TextChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lb);
             this.groupBox2.Controls.Add(this.MotorBox);
-            this.groupBox2.Location = new System.Drawing.Point(209, 53);
+            this.groupBox2.Location = new System.Drawing.Point(939, 247);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(243, 170);
+            this.groupBox2.Size = new System.Drawing.Size(200, 170);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Мотор упарвления клапоном 5";
@@ -284,31 +286,31 @@ namespace lr1_embedded_sys
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(29, 247);
             this.chart1.Name = "chart1";
-            series5.BorderWidth = 5;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Color = System.Drawing.Color.Lime;
-            series5.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series5.LabelForeColor = System.Drawing.Color.Tomato;
-            series5.Legend = "Legend1";
-            series5.MarkerBorderColor = System.Drawing.Color.Red;
-            series5.Name = "Входные";
-            series6.BorderWidth = 5;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Color = System.Drawing.Color.Red;
-            series6.Legend = "Legend1";
-            series6.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series6.Name = "Вывод";
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Size = new System.Drawing.Size(876, 326);
+            series1.BorderWidth = 5;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Lime;
+            series1.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series1.LabelForeColor = System.Drawing.Color.Tomato;
+            series1.Legend = "Legend1";
+            series1.MarkerBorderColor = System.Drawing.Color.Red;
+            series1.Name = "Входные";
+            series2.BorderWidth = 5;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series2.Name = "Вывод";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(856, 326);
             this.chart1.TabIndex = 8;
             // 
             // timer
@@ -318,10 +320,11 @@ namespace lr1_embedded_sys
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.lboc);
             this.groupBox5.Controls.Add(this.trackOC);
-            this.groupBox5.Location = new System.Drawing.Point(939, 261);
+            this.groupBox5.Location = new System.Drawing.Point(200, 60);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 100);
+            this.groupBox5.Size = new System.Drawing.Size(260, 100);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Обратная Связь (ОС)";
@@ -406,6 +409,16 @@ namespace lr1_embedded_sys
             // 
             this.null_rowtt.ContainerControl = this;
             // 
+            // lboc
+            // 
+            this.lboc.AutoSize = true;
+            this.lboc.Location = new System.Drawing.Point(17, 80);
+            this.lboc.Name = "lboc";
+            this.lboc.Size = new System.Drawing.Size(49, 13);
+            this.lboc.TabIndex = 1;
+            this.lboc.Text = "..............";
+            this.lboc.Click += new System.EventHandler(this.lboc_Click);
+            // 
             // LoadSAU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,6 +496,7 @@ namespace lr1_embedded_sys
         private System.Windows.Forms.ToolStrip toolStrip1;
         public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.ErrorProvider null_rowtt;
+        private System.Windows.Forms.Label lboc;
     }
 }
 

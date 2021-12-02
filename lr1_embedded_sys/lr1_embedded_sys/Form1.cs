@@ -10,6 +10,8 @@ namespace lr1_embedded_sys
  
     public partial class LoadSAU : Form
     {
+
+        double S = 2.0;
         class InsertToList
         {
             int value;
@@ -58,6 +60,7 @@ namespace lr1_embedded_sys
         private void timer_Tick(object sender, EventArgs e)
         {
             timer.Start();
+            lboc.Text = trackOC.Value + "";
             //првоерка рандома
             /* Random random = new Random(DateTime.Now.Millisecond);
              double randtemp = random.Next(0, 41);
@@ -70,7 +73,7 @@ namespace lr1_embedded_sys
             }
             catch
             {
-                null_rowtt.SetError(prec_tem_pusk, "не установлена температура");
+                null_rowtt.SetError(prec_tem_pusk, "нет уставки");
             }
             
             int value = Convert.ToInt32(temp_num.Value);
@@ -100,16 +103,47 @@ namespace lr1_embedded_sys
         protected void start_system_Click(object sender, EventArgs e)
         {
             timer_Tick(null,null);
+            trackOC_Scroll(null, null);
         }
 
         private void stop_btn_Click(object sender, EventArgs e)
         {
             timer.Stop();
         }
+        double f(double s)
+        {
+            return -Math.Log(s) / s;
+        }
+
+        double F(double t)
+        {
+            return 1.0 / Math.Exp(2.0 * t);
+        }
 
         private void trackOC_Scroll(object sender, EventArgs e)
         {
-            prec_tem_pusk.Text = trackOC.Value.ToString();
+            double ttEnt = LaplaceTransform.Transform(f, S);
+            double ttEnd = LaplaceTransform.InverseTransform(F, S);
+            double funcW = ttEnd / ttEnd;
+            lboc.Text = Convert.ToString(funcW);
+
+        }
+
+        private void prec_tem_pusk_TextChanged(object sender, EventArgs e)
+        {
+            //prec_tem_pusk.Text = trackOC.Value.ToString();
+        }
+
+        private void lboc_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void signalBox_TextChanged(object sender, EventArgs e)
+        {
+            double ssgnl = Convert.ToDouble(prec_tem_pusk.Text) - Convert.ToDouble(lboc.Text);
+            signalBox.Text = Convert.ToString(ssgnl);
+
         }
     }
 }
