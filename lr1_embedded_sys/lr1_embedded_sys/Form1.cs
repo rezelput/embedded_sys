@@ -61,6 +61,7 @@ namespace lr1_embedded_sys
         {
             timer.Start();
             trackstep(null, null);
+            MotorBox_TextChanged(null, null);
             //lboc.Text = trackOC.Value + "";
             //првоерка рандома
             /* Random random = new Random(DateTime.Now.Millisecond);
@@ -126,19 +127,27 @@ namespace lr1_embedded_sys
 
         private void trackstep(object sender, EventArgs e)
         {
-
             Random random = new Random(DateTime.Now.Millisecond);
             double S = random.Next(10, 60); //коэффициент t
-            double ttEnt = LaplaceTransform.Transform(f, S);
-            double ttEnd = LaplaceTransform.InverseTransform(F, S);
-            double funcW = ttEnd/ttEnt ;
-            //lboc.Text = Convert.ToString(funcW);
+            try
+            {
+                double ttEnt = LaplaceTransform.Transform(f, S);
+                double ttEnd = LaplaceTransform.InverseTransform(F, S);
+                double funcW = ttEnd / ttEnt;
+                //lboc.Text = Convert.ToString(funcW);
 
-            //TrackOC.PerformStep(); когда-то был прогресс бар
-            //трэк навигация
-            locktt.Text = Convert.ToString(funcW);
-            int ta = Convert.ToInt32(Convert.ToDouble(prec_tem_pusk.Text));
-            TrackOC.Value = ta;
+                //TrackOC.PerformStep(); когда-то был прогресс бар
+                //трэк навигация
+                locktt.Text = Convert.ToString(funcW);
+                int ta = Convert.ToInt32(Convert.ToDouble(prec_tem_pusk.Text));
+                TrackOC.Value = ta;
+
+            }
+            catch (Exception exeption)
+            {
+                MessageBox.Show(exeption.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
             //записать данные сигнала
             //signalBox.Text = Convert.ToString(Convert.ToDouble(funcW));
@@ -160,6 +169,41 @@ namespace lr1_embedded_sys
         private void signalBox_TextChanged(object sender, EventArgs e)
         {
             
+
+        }
+
+        //расчет мощности клапа и передача NBar
+        private void SumMMK()
+        {
+
+            Random P = new Random();
+            double p0 = P.Next(1, 10);
+            //для расчета КПД насоса примем стандартную величину , где мощность мотора равна250 Вт , а приблизительная мощность насоса около 20%
+            //следовательно его КПД равна около 45 %
+            //определим давление 
+            double Pdd = p0 * Convert.ToDouble(prec_tem_pusk.Text) / 10000; //деление на 1к для преобразования в кПА
+            double Qreal = (100 * 10 * 2) - 20; //примерные стат данные
+            int Nup = Convert.ToInt32((Pdd * Qreal) / (60 * 0.45));
+            NBar.Value = Nup;
+
+        }
+
+        private void MotorBox_TextChanged(object sender, EventArgs e)
+        {
+            SumMMK();
+            //string w; //собственная функция изменения 
+            Random random = new Random(DateTime.Now.Millisecond);
+            double tt = random.Next(10, 60); //коэффициент t
+            double s0 = tt * 100;
+            double w;
+            Random T0 = new Random();
+            double t0 = T0.Next(0, 1);
+            if (Double.TryParse(locktt.Text, out w))
+            {
+                w = Convert.ToDouble(s0 + (Convert.ToDouble(locktt.Text) - s0) * Convert.ToDouble(NBar.Value)*(t0));
+            }
+            
+            MotorBox.Text = Convert.ToString(w);
 
         }
     }

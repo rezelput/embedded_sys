@@ -15,3 +15,16 @@ G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕ
 G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.OpenGl.xml
 G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.Platform.Windows.xml
 G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.CopyComplete
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\lr1_embedded_sys.exe.config
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\lr1_embedded_sys.exe
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\lr1_embedded_sys.pdb
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.FreeGlut.xml
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.OpenGl.xml
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.Platform.Windows.xml
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.AssemblyReference.cache
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.LoadSAU.resources
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.Properties.Resources.resources
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.GenerateResource.cache
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.exe
+C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.pdb
