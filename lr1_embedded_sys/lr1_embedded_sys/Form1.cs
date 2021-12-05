@@ -62,12 +62,15 @@ namespace lr1_embedded_sys
             timer.Start();
             trackstep(null, null);
             MotorBox_TextChanged(null, null);
-            //lboc.Text = trackOC.Value + "";
-            //првоерка рандома
-            /* Random random = new Random(DateTime.Now.Millisecond);
-             double randtemp = random.Next(0, 41);
-            */
-            DateTime timeNow = DateTime.Now;
+            //
+            // progressBar1.Value = Int32.Parse(temprt.Text);
+            tm_prgrbar_Tick(null, null);
+             //lboc.Text = trackOC.Value + "";
+             //првоерка рандома
+             /* Random random = new Random(DateTime.Now.Millisecond);
+              double randtemp = random.Next(0, 41);
+             */
+             DateTime timeNow = DateTime.Now;
             try
             {
                 double value_tt = Convert.ToDouble(prec_tem_pusk.Text);
@@ -204,6 +207,44 @@ namespace lr1_embedded_sys
             }
             
             MotorBox.Text = Convert.ToString(w);
+
+        }
+
+       // private void temp_num_ValueChanged(object sender, EventArgs e)
+        
+
+        private void tm_prgrbar_Tick(object sender, EventArgs e)
+        {
+
+            tm_prgrbar.Start();
+            try
+            {
+                if (temprt.Text  != String.Empty)
+                {
+                    progressBar1.Value = Int32.Parse(temprt.Text);
+                }
+            
+            }
+            catch(Exception exeption)
+            {
+                MessageBox.Show(exeption.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void temprt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpBox_TextChanged(object sender, EventArgs e)
+        {
+            double fi;
+            Random random = new Random();
+            double n = random.Next(1, 10); //коэффициент n
+            Random tet = new Random();
+            double teta = tet.Next(1, 10); //teta
+
 
         }
     }
