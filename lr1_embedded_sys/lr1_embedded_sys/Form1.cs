@@ -52,32 +52,15 @@ namespace lr1_embedded_sys
         {
             //запуск
             timer.Tick += timer_Tick;
-            timer.Interval = 180;
-
-            //рисуем график//
-            temp_num.Maximum = 160;
-            temp_num.Minimum = -10;
-            //ось Y
-            chart1.ChartAreas[0].AxisY.Maximum = 160;
-            chart1.ChartAreas[0].AxisY.Minimum = -15;
-            //ось X
-            //установить формат
-            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "H:mm:ss";
-            chart1.Series[0].XValueType = ChartValueType.DateTime;
-
-            //chart1.ChartAreas[0].AxisX.Maximum = 125;
-            chart1.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
-            chart1.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(5).ToOADate();
-
-            chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
-            chart1.ChartAreas[0].AxisX.Interval = 60;
-
+            timer.Interval = 120;
         }
 
 
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            timer_graph.Tick += timer_graph_Tick;
+            timer_graph.Interval = 180;
             //запуск методов
             timer1_Tick(null, null);
             
@@ -110,8 +93,8 @@ namespace lr1_embedded_sys
                 chart1.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
                 chart1.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
 
-                chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
-                chart1.ChartAreas[0].AxisX.Interval = 20;
+                chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Minutes;
+                chart1.ChartAreas[0].AxisX.Interval = 2;
             }
            
         }
@@ -311,6 +294,31 @@ namespace lr1_embedded_sys
             TrackOC_Scroll(null, null);
 
             tm_prgrbar_Tick(null, null);
+        }
+
+        private void timer_graph_Tick(object sender, EventArgs e)
+        {
+            //timer_graph.Enabled = true;
+            //рисуем график//
+            temp_num.Maximum = 160;
+            temp_num.Minimum = -10;
+            //ось Y
+            chart1.ChartAreas[0].AxisY.Maximum = 160;
+            chart1.ChartAreas[0].AxisY.Minimum = -15;
+            //ось X
+            //установить формат
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "H:mm:ss";
+            chart1.Series[0].XValueType = ChartValueType.DateTime;
+
+            chart1.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
+            chart1.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
+
+            chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
+            chart1.ChartAreas[0].AxisX.Interval = 10;
+            // chart1.Series[0].ChartType = SeriesChartType.Line;
+            // chart1.Series[1].ChartType = SeriesChartType.Line;
+
+
         }
     }
 }
