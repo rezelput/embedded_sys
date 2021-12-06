@@ -50,9 +50,12 @@ namespace lr1_embedded_sys
         //double limitTemp = 150;
         private void LoadSAU_Load(object sender, EventArgs e)
         {
-            //timer.Enabled = true;//запуск
+            //запуск
+            timer.Tick += timer_Tick;
+            timer.Interval = 180;
 
-            temp_num.Maximum = 155;
+            //рисуем график//
+            temp_num.Maximum = 160;
             temp_num.Minimum = -10;
             //ось Y
             chart1.ChartAreas[0].AxisY.Maximum = 160;
@@ -64,28 +67,21 @@ namespace lr1_embedded_sys
 
             //chart1.ChartAreas[0].AxisX.Maximum = 125;
             chart1.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
-            chart1.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
+            chart1.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(5).ToOADate();
 
             chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
-            chart1.ChartAreas[0].AxisX.Interval = 10;
+            chart1.ChartAreas[0].AxisX.Interval = 60;
+
         }
+
+
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            timer.Start();
-            trackstep(null, null);
-            MotorBox_TextChanged(null, null);
-            tpBox_TextChanged(null, null);
-            TrackOC_Scroll(null, null);
-            //
-            // progressBar1.Value = Int32.Parse(temprt.Text);
-            tm_prgrbar_Tick(null, null);
-             //lboc.Text = trackOC.Value + "";
-             //првоерка рандома
-             /* Random random = new Random(DateTime.Now.Millisecond);
-              double randtemp = random.Next(0, 41);
-             */
-             DateTime timeNow = DateTime.Now;
+            //запуск методов
+            timer1_Tick(null, null);
+            
+            DateTime timeNow = DateTime.Now;
             try
             {
                 double value_tt = Convert.ToDouble(prec_tem_pusk.Text);
@@ -108,21 +104,21 @@ namespace lr1_embedded_sys
             ttll.Add(new InsertToList(value, timeNow));
             //обновление данных после x минуты
             _countSeconds++;
-            if (_countSeconds == 120)
+            if (_countSeconds == 60)
             {
                 _countSeconds = 0;
                 chart1.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
                 chart1.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
 
                 chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
-                chart1.ChartAreas[0].AxisX.Interval = 10;
+                chart1.ChartAreas[0].AxisX.Interval = 20;
             }
-
+           
         }
 
         protected void start_system_Click(object sender, EventArgs e)
         {
-            //timer_Tick(null,null);
+            timer.Start();
         }
 
         private void stop_btn_Click(object sender, EventArgs e)
@@ -305,6 +301,16 @@ namespace lr1_embedded_sys
             Random kk = new Random();
             int k = kk.Next(-1, 1);
             TrackOC.Value = Convert.ToInt32(temp_num.Value) * k;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            trackstep(null, null);
+            MotorBox_TextChanged(null, null);
+            tpBox_TextChanged(null, null);
+            TrackOC_Scroll(null, null);
+
+            tm_prgrbar_Tick(null, null);
         }
     }
 }
