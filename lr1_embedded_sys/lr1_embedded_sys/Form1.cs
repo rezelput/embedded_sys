@@ -75,6 +75,7 @@ namespace lr1_embedded_sys
             timer.Start();
             trackstep(null, null);
             MotorBox_TextChanged(null, null);
+            tpBox_TextChanged(null, null);
             //
             // progressBar1.Value = Int32.Parse(temprt.Text);
             tm_prgrbar_Tick(null, null);
@@ -188,25 +189,21 @@ namespace lr1_embedded_sys
 
         }
 
-        //расчет мощности клапа и передача NBar
-        private void SumMMK()
-        {
+       
 
+        private void MotorBox_TextChanged(object sender, EventArgs e)
+        {
+            //расчет мощности клапа и передача NBar
             Random P = new Random();
             double p0 = P.Next(1, 10);
             //для расчета КПД насоса примем стандартную величину , где мощность мотора равна250 Вт , а приблизительная мощность насоса около 20%
             //следовательно его КПД равна около 45 %
             //определим давление 
-            double Pdd = p0 * Convert.ToDouble(prec_tem_pusk.Text) / 10000; //деление на 1к для преобразования в кПА
+            double Pdd = p0 * Convert.ToDouble(prec_tem_pusk.Text) / 1000; //деление на 1к для преобразования в кПА
             double Qreal = (100 * 10 * 2) - 20; //примерные стат данные
             int Nup = Convert.ToInt32((Pdd * Qreal) / (60 * 0.45));
             NBar.Value = Nup;
 
-        }
-
-        private void MotorBox_TextChanged(object sender, EventArgs e)
-        {
-            SumMMK();
             //string w; //собственная функция изменения 
             Random random = new Random(DateTime.Now.Millisecond);
             double tt = random.Next(10, 60); //коэффициент t
@@ -216,7 +213,7 @@ namespace lr1_embedded_sys
             double t0 = T0.Next(0, 1);
             if (Double.TryParse(locktt.Text, out w))
             {
-                w = Convert.ToDouble(s0 + (Convert.ToDouble(locktt.Text) - s0) * Convert.ToDouble(NBar.Value)*(t0));
+                w = (Convert.ToDouble(s0 + (Convert.ToDouble(locktt.Text) - s0) * Convert.ToDouble(NBar.Value)*(t0))) * 0.001;
             }
             
             MotorBox.Text = Convert.ToString(w);
@@ -254,12 +251,13 @@ namespace lr1_embedded_sys
 
         private void tpBox_TextChanged(object sender, EventArgs e)
         {
-            double fi;
             Random random = new Random();
             double n = random.Next(1, 10); //коэффициент n
             Random tet = new Random();
             double teta = tet.Next(1, 10); //teta
-
+            double T1 = Convert.ToDouble(temp_num.Value) + (Convert.ToDouble(MotorBox.Text) - Convert.ToDouble(temp_num.Value)) * n * teta;
+            tpBox.Text = Convert.ToString(T1);
+            barkl.Value = Convert.ToInt32(T1 * 0.01);
 
         }
 
