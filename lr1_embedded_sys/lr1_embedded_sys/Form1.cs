@@ -122,7 +122,7 @@ namespace lr1_embedded_sys
 
         protected void start_system_Click(object sender, EventArgs e)
         {
-            timer_Tick(null,null);
+            //timer_Tick(null,null);
         }
 
         private void stop_btn_Click(object sender, EventArgs e)
