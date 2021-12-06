@@ -76,6 +76,7 @@ namespace lr1_embedded_sys
             trackstep(null, null);
             MotorBox_TextChanged(null, null);
             tpBox_TextChanged(null, null);
+            TrackOC_Scroll(null, null);
             //
             // progressBar1.Value = Int32.Parse(temprt.Text);
             tm_prgrbar_Tick(null, null);
@@ -157,7 +158,7 @@ namespace lr1_embedded_sys
                 //трэк навигация
                 locktt.Text = Convert.ToString(funcW);
                 int ta = Convert.ToInt32(Convert.ToDouble(prec_tem_pusk.Text));
-                TrackOC.Value = ta;
+                //TrackOC.Value = ta;
 
             }
             catch (Exception exeption)
@@ -257,7 +258,23 @@ namespace lr1_embedded_sys
             double teta = tet.Next(1, 10); //teta
             double T1 = Convert.ToDouble(temp_num.Value) + (Convert.ToDouble(MotorBox.Text) - Convert.ToDouble(temp_num.Value)) * n * teta;
             tpBox.Text = Convert.ToString(T1);
-            barkl.Value = Convert.ToInt32(T1 * 0.01);
+            try
+            {
+                if (barkl.Value > 52.0)
+                {
+                    null_rowtt.SetError(barkl, "Ошибка");
+                }
+                else 
+                {
+                    barkl.Value = Convert.ToInt32(T1 * 0.01);
+                }
+                    
+            }
+            catch(Exception exeption)
+            {
+                MessageBox.Show(exeption.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 
         }
 
@@ -281,6 +298,13 @@ namespace lr1_embedded_sys
         private void выклToolStripMenuItem_Click(object sender, EventArgs e)
         {
             port1.Close();
+        }
+
+        private void TrackOC_Scroll(object sender, ScrollEventArgs e)
+        {
+            Random kk = new Random();
+            int k = kk.Next(-1, 1);
+            TrackOC.Value = Convert.ToInt32(temp_num.Value) * k;
         }
     }
 }

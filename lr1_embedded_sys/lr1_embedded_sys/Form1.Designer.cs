@@ -30,10 +30,10 @@ namespace lr1_embedded_sys
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadSAU));
             this.prec_tem_pusk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +44,8 @@ namespace lr1_embedded_sys
             this.lb = new System.Windows.Forms.Label();
             this.MotorBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tpBox = new System.Windows.Forms.TextBox();
+            this.barkl = new System.Windows.Forms.HScrollBar();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.temp_num = new System.Windows.Forms.NumericUpDown();
@@ -67,15 +69,13 @@ namespace lr1_embedded_sys
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.enbl_temp = new System.Windows.Forms.ToolStripMenuItem();
             this.enbl_boiler = new System.Windows.Forms.ToolStripMenuItem();
+            this.вклToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выклToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.null_rowtt = new System.Windows.Forms.ErrorProvider(this.components);
             this.NBar = new System.Windows.Forms.HScrollBar();
             this.label8 = new System.Windows.Forms.Label();
             this.tm_prgrbar = new System.Windows.Forms.Timer(this.components);
-            this.вклToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выклToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.barkl = new System.Windows.Forms.HScrollBar();
-            this.tpBox = new System.Windows.Forms.TextBox();
             this.regul.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -174,6 +174,23 @@ namespace lr1_embedded_sys
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Топливный клапан 21";
+            // 
+            // tpBox
+            // 
+            this.tpBox.Location = new System.Drawing.Point(15, 53);
+            this.tpBox.Name = "tpBox";
+            this.tpBox.ReadOnly = true;
+            this.tpBox.Size = new System.Drawing.Size(144, 20);
+            this.tpBox.TabIndex = 6;
+            // 
+            // barkl
+            // 
+            this.barkl.Location = new System.Drawing.Point(18, 95);
+            this.barkl.Maximum = 50;
+            this.barkl.Minimum = -50;
+            this.barkl.Name = "barkl";
+            this.barkl.Size = new System.Drawing.Size(318, 20);
+            this.barkl.TabIndex = 5;
             // 
             // label4
             // 
@@ -297,30 +314,30 @@ namespace lr1_embedded_sys
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(27, 311);
             this.chart1.Name = "chart1";
-            series1.BorderWidth = 5;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.Lime;
-            series1.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series1.LabelForeColor = System.Drawing.Color.Tomato;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = System.Drawing.Color.Red;
-            series1.Name = "Входные";
-            series2.BorderWidth = 5;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Red;
-            series2.Legend = "Legend1";
-            series2.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series2.Name = "Вывод";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
+            series3.BorderWidth = 5;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Color = System.Drawing.Color.Lime;
+            series3.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series3.LabelForeColor = System.Drawing.Color.Tomato;
+            series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.Red;
+            series3.Name = "Входные";
+            series4.BorderWidth = 5;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Color = System.Drawing.Color.Red;
+            series4.Legend = "Legend1";
+            series4.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series4.Name = "Вывод";
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(1112, 306);
             this.chart1.TabIndex = 8;
             // 
@@ -334,7 +351,7 @@ namespace lr1_embedded_sys
             this.groupBox5.Controls.Add(this.TrackOC);
             this.groupBox5.Location = new System.Drawing.Point(29, 205);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(298, 100);
+            this.groupBox5.Size = new System.Drawing.Size(434, 100);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Обратная Связь (ОС)";
@@ -346,8 +363,9 @@ namespace lr1_embedded_sys
             this.TrackOC.Location = new System.Drawing.Point(3, 49);
             this.TrackOC.Minimum = -100;
             this.TrackOC.Name = "TrackOC";
-            this.TrackOC.Size = new System.Drawing.Size(292, 29);
+            this.TrackOC.Size = new System.Drawing.Size(422, 29);
             this.TrackOC.TabIndex = 10;
+            this.TrackOC.Scroll += new System.Windows.Forms.ScrollEventHandler(this.TrackOC_Scroll);
             // 
             // pusk_btn
             // 
@@ -364,14 +382,14 @@ namespace lr1_embedded_sys
             // start_system
             // 
             this.start_system.Name = "start_system";
-            this.start_system.Size = new System.Drawing.Size(180, 22);
+            this.start_system.Size = new System.Drawing.Size(138, 22);
             this.start_system.Text = "Запуск";
             this.start_system.Click += new System.EventHandler(this.start_system_Click);
             // 
             // stop_btn
             // 
             this.stop_btn.Name = "stop_btn";
-            this.stop_btn.Size = new System.Drawing.Size(180, 22);
+            this.stop_btn.Size = new System.Drawing.Size(138, 22);
             this.stop_btn.Text = "Остановить";
             this.stop_btn.Click += new System.EventHandler(this.stop_btn_Click);
             // 
@@ -408,6 +426,20 @@ namespace lr1_embedded_sys
             this.enbl_boiler.Text = "Управление котлом";
             this.enbl_boiler.Click += new System.EventHandler(this.enbl_boiler_Click);
             // 
+            // вклToolStripMenuItem
+            // 
+            this.вклToolStripMenuItem.Name = "вклToolStripMenuItem";
+            this.вклToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.вклToolStripMenuItem.Text = "вкл";
+            this.вклToolStripMenuItem.Click += new System.EventHandler(this.вклToolStripMenuItem_Click);
+            // 
+            // выклToolStripMenuItem
+            // 
+            this.выклToolStripMenuItem.Name = "выклToolStripMenuItem";
+            this.выклToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.выклToolStripMenuItem.Text = "выкл";
+            this.выклToolStripMenuItem.Click += new System.EventHandler(this.выклToolStripMenuItem_Click);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -430,7 +462,7 @@ namespace lr1_embedded_sys
             this.NBar.Maximum = 50;
             this.NBar.Minimum = -50;
             this.NBar.Name = "NBar";
-            this.NBar.Size = new System.Drawing.Size(276, 30);
+            this.NBar.Size = new System.Drawing.Size(398, 30);
             this.NBar.TabIndex = 20;
             // 
             // label8
@@ -445,37 +477,6 @@ namespace lr1_embedded_sys
             // tm_prgrbar
             // 
             this.tm_prgrbar.Tick += new System.EventHandler(this.tm_prgrbar_Tick);
-            // 
-            // вклToolStripMenuItem
-            // 
-            this.вклToolStripMenuItem.Name = "вклToolStripMenuItem";
-            this.вклToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.вклToolStripMenuItem.Text = "вкл";
-            this.вклToolStripMenuItem.Click += new System.EventHandler(this.вклToolStripMenuItem_Click);
-            // 
-            // выклToolStripMenuItem
-            // 
-            this.выклToolStripMenuItem.Name = "выклToolStripMenuItem";
-            this.выклToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.выклToolStripMenuItem.Text = "выкл";
-            this.выклToolStripMenuItem.Click += new System.EventHandler(this.выклToolStripMenuItem_Click);
-            // 
-            // barkl
-            // 
-            this.barkl.Location = new System.Drawing.Point(18, 95);
-            this.barkl.Maximum = 50;
-            this.barkl.Minimum = -50;
-            this.barkl.Name = "barkl";
-            this.barkl.Size = new System.Drawing.Size(318, 20);
-            this.barkl.TabIndex = 5;
-            // 
-            // tpBox
-            // 
-            this.tpBox.Location = new System.Drawing.Point(15, 53);
-            this.tpBox.Name = "tpBox";
-            this.tpBox.ReadOnly = true;
-            this.tpBox.Size = new System.Drawing.Size(144, 20);
-            this.tpBox.TabIndex = 6;
             // 
             // LoadSAU
             // 
