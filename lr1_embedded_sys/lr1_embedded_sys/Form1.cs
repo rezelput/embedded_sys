@@ -60,7 +60,7 @@ namespace lr1_embedded_sys
         private void timer_Tick(object sender, EventArgs e)
         {
             timer_graph.Tick += timer_graph_Tick;
-            timer_graph.Interval = 180;
+            timer_graph.Interval = 120;
             //запуск методов
             timer1_Tick(null, null);
             
@@ -87,7 +87,7 @@ namespace lr1_embedded_sys
             ttll.Add(new InsertToList(value, timeNow));
             //обновление данных после x минуты
             _countSeconds++;
-            if (_countSeconds == 60)
+            if (_countSeconds == 240)
             {
                 _countSeconds = 0;
                 chart1.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();

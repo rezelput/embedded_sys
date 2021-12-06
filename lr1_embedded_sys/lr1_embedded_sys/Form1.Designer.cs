@@ -30,10 +30,10 @@ namespace lr1_embedded_sys
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadSAU));
             this.prec_tem_pusk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,6 +71,7 @@ namespace lr1_embedded_sys
             this.tm_prgrbar = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer_graph = new System.Windows.Forms.Timer(this.components);
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.regul.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -245,30 +246,30 @@ namespace lr1_embedded_sys
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(27, 311);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(27, 373);
             this.chart1.Name = "chart1";
-            series1.BorderWidth = 5;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.Lime;
-            series1.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series1.LabelForeColor = System.Drawing.Color.Tomato;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = System.Drawing.Color.Red;
-            series1.Name = "Входные";
-            series2.BorderWidth = 5;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Red;
-            series2.Legend = "Legend1";
-            series2.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series2.Name = "Вывод";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
+            series7.BorderWidth = 5;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Color = System.Drawing.Color.Lime;
+            series7.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series7.LabelForeColor = System.Drawing.Color.Tomato;
+            series7.Legend = "Legend1";
+            series7.MarkerBorderColor = System.Drawing.Color.Red;
+            series7.Name = "Входные";
+            series8.BorderWidth = 5;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Color = System.Drawing.Color.Red;
+            series8.Legend = "Legend1";
+            series8.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series8.Name = "Вывод";
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(791, 306);
             this.chart1.TabIndex = 8;
             // 
@@ -376,10 +377,11 @@ namespace lr1_embedded_sys
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pusk_btn,
             this.toolStripSeparator1,
-            this.toolStripSplitButton1});
+            this.toolStripSplitButton1,
+            this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1166, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1153, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -389,7 +391,7 @@ namespace lr1_embedded_sys
             // 
             // NBar
             // 
-            this.NBar.Location = new System.Drawing.Point(741, 265);
+            this.NBar.Location = new System.Drawing.Point(29, 333);
             this.NBar.Maximum = 50;
             this.NBar.Minimum = -50;
             this.NBar.Name = "NBar";
@@ -399,7 +401,7 @@ namespace lr1_embedded_sys
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(750, 253);
+            this.label8.Location = new System.Drawing.Point(35, 320);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(215, 13);
             this.label8.TabIndex = 5;
@@ -417,11 +419,16 @@ namespace lr1_embedded_sys
             // 
             this.timer_graph.Tick += new System.EventHandler(this.timer_graph_Tick);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // LoadSAU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 649);
+            this.ClientSize = new System.Drawing.Size(1153, 701);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.NBar);
             this.Controls.Add(this.groupBox5);
@@ -492,6 +499,7 @@ namespace lr1_embedded_sys
         private System.Windows.Forms.TextBox tpBox;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer_graph;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 
