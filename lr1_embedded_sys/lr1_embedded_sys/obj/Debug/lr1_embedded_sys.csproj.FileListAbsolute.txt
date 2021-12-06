@@ -28,3 +28,21 @@ C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_s
 C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.CoreCompileInputs.cache
 C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.exe
 C:\Users\User\Source\Repos\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.pdb
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\lr1_embedded_sys.exe.config
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\lr1_embedded_sys.exe
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\lr1_embedded_sys.pdb
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.FreeGlut.dll
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.OpenGl.dll
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.Platform.Windows.dll
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.FreeGlut.xml
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.OpenGl.xml
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.Platform.Windows.xml
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.AssemblyReference.cache
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.Properties.Resources.resources
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.GenerateResource.cache
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.CoreCompileInputs.cache
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.CopyComplete
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.exe
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.pdb
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Form1.resx
+G:\Мой диск\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.LoadSAU.resources

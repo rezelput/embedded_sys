@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.IO.Ports;
 
 
 namespace lr1_embedded_sys
@@ -12,6 +13,18 @@ namespace lr1_embedded_sys
     {
 
         //double S = 2.0;
+        //добавление порта
+        SerialPort port1 = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
+
+        public void send(byte data)
+        {
+            if (port1.IsOpen)
+            {
+                byte[] buffer = { 0 };
+                buffer[0] = data;
+                port1.Write(buffer, 0, 1);
+            }
+        }
         class InsertToList
         {
             int value;
@@ -215,13 +228,15 @@ namespace lr1_embedded_sys
 
         private void tm_prgrbar_Tick(object sender, EventArgs e)
         {
+            temp_num_ValueChanged(null, null);
+            temprt_TextChanged(null, null);
 
             tm_prgrbar.Start();
             try
             {
-                if (temprt.Text  != String.Empty)
+                if (temp_num.Text  != String.Empty)
                 {
-                    progressBar1.Value = Int32.Parse(temprt.Text);
+                    progressBar1.Value = Int32.Parse(temp_num.Text);
                 }
             
             }
@@ -234,7 +249,7 @@ namespace lr1_embedded_sys
 
         private void temprt_TextChanged(object sender, EventArgs e)
         {
-
+           // temprt.Text = temp_num.Value.ToString();
         }
 
         private void tpBox_TextChanged(object sender, EventArgs e)
@@ -246,6 +261,28 @@ namespace lr1_embedded_sys
             double teta = tet.Next(1, 10); //teta
 
 
+        }
+
+        private void temp_num_ValueChanged(object sender, EventArgs e)
+        {
+           
+            
+        }
+
+        private void enbl_boiler_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void вклToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            port1.Open();
+            send(Byte.Parse(temp_num.Value.ToString()));
+        }
+
+        private void выклToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            port1.Close();
         }
     }
 }

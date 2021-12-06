@@ -30,10 +30,10 @@ namespace lr1_embedded_sys
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadSAU));
             this.prec_tem_pusk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +47,6 @@ namespace lr1_embedded_sys
             this.label4 = new System.Windows.Forms.Label();
             this.tpBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.temprt = new System.Windows.Forms.TextBox();
             this.temp_num = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -74,6 +73,8 @@ namespace lr1_embedded_sys
             this.NBar = new System.Windows.Forms.HScrollBar();
             this.label8 = new System.Windows.Forms.Label();
             this.tm_prgrbar = new System.Windows.Forms.Timer(this.components);
+            this.вклToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выклToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regul.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -192,7 +193,6 @@ namespace lr1_embedded_sys
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.temprt);
             this.groupBox3.Controls.Add(this.temp_num);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.progressBar1);
@@ -203,14 +203,6 @@ namespace lr1_embedded_sys
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Котел";
             // 
-            // temprt
-            // 
-            this.temprt.Location = new System.Drawing.Point(74, 52);
-            this.temprt.Name = "temprt";
-            this.temprt.Size = new System.Drawing.Size(139, 20);
-            this.temprt.TabIndex = 5;
-            this.temprt.TextChanged += new System.EventHandler(this.temprt_TextChanged);
-            // 
             // temp_num
             // 
             this.temp_num.Location = new System.Drawing.Point(10, 53);
@@ -220,8 +212,9 @@ namespace lr1_embedded_sys
             0,
             0});
             this.temp_num.Name = "temp_num";
-            this.temp_num.Size = new System.Drawing.Size(46, 20);
+            this.temp_num.Size = new System.Drawing.Size(114, 20);
             this.temp_num.TabIndex = 4;
+            this.temp_num.ValueChanged += new System.EventHandler(this.temp_num_ValueChanged);
             // 
             // label3
             // 
@@ -306,30 +299,30 @@ namespace lr1_embedded_sys
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(27, 311);
             this.chart1.Name = "chart1";
-            series3.BorderWidth = 5;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Color = System.Drawing.Color.Lime;
-            series3.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series3.LabelForeColor = System.Drawing.Color.Tomato;
-            series3.Legend = "Legend1";
-            series3.MarkerBorderColor = System.Drawing.Color.Red;
-            series3.Name = "Входные";
-            series4.BorderWidth = 5;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = System.Drawing.Color.Red;
-            series4.Legend = "Legend1";
-            series4.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series4.Name = "Вывод";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series9.BorderWidth = 5;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Color = System.Drawing.Color.Lime;
+            series9.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series9.LabelForeColor = System.Drawing.Color.Tomato;
+            series9.Legend = "Legend1";
+            series9.MarkerBorderColor = System.Drawing.Color.Red;
+            series9.Name = "Входные";
+            series10.BorderWidth = 5;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Color = System.Drawing.Color.Red;
+            series10.Legend = "Legend1";
+            series10.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series10.Name = "Вывод";
+            this.chart1.Series.Add(series9);
+            this.chart1.Series.Add(series10);
             this.chart1.Size = new System.Drawing.Size(1112, 306);
             this.chart1.TabIndex = 8;
             // 
@@ -409,9 +402,13 @@ namespace lr1_embedded_sys
             // 
             // enbl_boiler
             // 
+            this.enbl_boiler.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.вклToolStripMenuItem,
+            this.выклToolStripMenuItem});
             this.enbl_boiler.Name = "enbl_boiler";
-            this.enbl_boiler.Size = new System.Drawing.Size(166, 22);
-            this.enbl_boiler.Text = "вкл котел";
+            this.enbl_boiler.Size = new System.Drawing.Size(184, 22);
+            this.enbl_boiler.Text = "Управление котлом";
+            this.enbl_boiler.Click += new System.EventHandler(this.enbl_boiler_Click);
             // 
             // toolStrip1
             // 
@@ -449,6 +446,20 @@ namespace lr1_embedded_sys
             // tm_prgrbar
             // 
             this.tm_prgrbar.Tick += new System.EventHandler(this.tm_prgrbar_Tick);
+            // 
+            // вклToolStripMenuItem
+            // 
+            this.вклToolStripMenuItem.Name = "вклToolStripMenuItem";
+            this.вклToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.вклToolStripMenuItem.Text = "вкл";
+            this.вклToolStripMenuItem.Click += new System.EventHandler(this.вклToolStripMenuItem_Click);
+            // 
+            // выклToolStripMenuItem
+            // 
+            this.выклToolStripMenuItem.Name = "выклToolStripMenuItem";
+            this.выклToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выклToolStripMenuItem.Text = "выкл";
+            this.выклToolStripMenuItem.Click += new System.EventHandler(this.выклToolStripMenuItem_Click);
             // 
             // LoadSAU
             // 
@@ -530,7 +541,8 @@ namespace lr1_embedded_sys
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.HScrollBar NBar;
         private System.Windows.Forms.Timer tm_prgrbar;
-        private System.Windows.Forms.TextBox temprt;
+        private System.Windows.Forms.ToolStripMenuItem вклToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выклToolStripMenuItem;
     }
 }
 
