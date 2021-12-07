@@ -30,10 +30,10 @@ namespace lr1_embedded_sys
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadSAU));
             this.prec_tem_pusk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@ namespace lr1_embedded_sys
             this.MotorBox = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.track4 = new System.Windows.Forms.Label();
             this.tpBox = new System.Windows.Forms.TextBox();
             this.barkl = new System.Windows.Forms.HScrollBar();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,7 +76,7 @@ namespace lr1_embedded_sys
             this.timer_graph = new System.Windows.Forms.Timer(this.components);
             this.BoxPort = new System.Windows.Forms.ComboBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.track4 = new System.Windows.Forms.Label();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.regul.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -187,6 +188,14 @@ namespace lr1_embedded_sys
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Топливный клапан 21";
             // 
+            // track4
+            // 
+            this.track4.AutoSize = true;
+            this.track4.Location = new System.Drawing.Point(15, 185);
+            this.track4.Name = "track4";
+            this.track4.Size = new System.Drawing.Size(0, 13);
+            this.track4.TabIndex = 7;
+            // 
             // tpBox
             // 
             this.tpBox.Location = new System.Drawing.Point(15, 53);
@@ -269,30 +278,30 @@ namespace lr1_embedded_sys
             // 
             // chart1
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(27, 373);
             this.chart1.Name = "chart1";
-            series11.BorderWidth = 5;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series11.Color = System.Drawing.Color.Lime;
-            series11.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series11.LabelForeColor = System.Drawing.Color.Tomato;
-            series11.Legend = "Legend1";
-            series11.MarkerBorderColor = System.Drawing.Color.Red;
-            series11.Name = "Входные";
-            series12.BorderWidth = 5;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series12.Color = System.Drawing.Color.Red;
-            series12.Legend = "Legend1";
-            series12.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series12.Name = "Вывод";
-            this.chart1.Series.Add(series11);
-            this.chart1.Series.Add(series12);
+            series3.BorderWidth = 5;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Color = System.Drawing.Color.Lime;
+            series3.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series3.LabelForeColor = System.Drawing.Color.Tomato;
+            series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.Red;
+            series3.Name = "Входные";
+            series4.BorderWidth = 5;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Color = System.Drawing.Color.Red;
+            series4.Legend = "Legend1";
+            series4.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series4.Name = "Вывод";
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(791, 306);
             this.chart1.TabIndex = 8;
             // 
@@ -316,7 +325,8 @@ namespace lr1_embedded_sys
             this.null_rowtt.SetIconPadding(this.TrackOC, 1);
             this.TrackOC.LargeChange = 20;
             this.TrackOC.Location = new System.Drawing.Point(3, 49);
-            this.TrackOC.Minimum = -100;
+            this.TrackOC.Maximum = 500;
+            this.TrackOC.Minimum = -500;
             this.TrackOC.Name = "TrackOC";
             this.TrackOC.Size = new System.Drawing.Size(422, 29);
             this.TrackOC.TabIndex = 10;
@@ -401,7 +411,8 @@ namespace lr1_embedded_sys
             this.pusk_btn,
             this.toolStripSeparator1,
             this.toolStripSplitButton1,
-            this.toolStripSeparator2});
+            this.toolStripSeparator2,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1153, 25);
@@ -420,8 +431,8 @@ namespace lr1_embedded_sys
             // NBar
             // 
             this.NBar.Location = new System.Drawing.Point(29, 333);
-            this.NBar.Maximum = 50;
-            this.NBar.Minimum = -50;
+            this.NBar.Maximum = 150;
+            this.NBar.Minimum = -150;
             this.NBar.Name = "NBar";
             this.NBar.Size = new System.Drawing.Size(398, 30);
             this.NBar.TabIndex = 20;
@@ -456,13 +467,15 @@ namespace lr1_embedded_sys
             this.BoxPort.Size = new System.Drawing.Size(148, 21);
             this.BoxPort.TabIndex = 21;
             // 
-            // track4
+            // toolStripButton1
             // 
-            this.track4.AutoSize = true;
-            this.track4.Location = new System.Drawing.Point(15, 185);
-            this.track4.Name = "track4";
-            this.track4.Size = new System.Drawing.Size(0, 13);
-            this.track4.TabIndex = 7;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "exit";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // LoadSAU
             // 
@@ -546,6 +559,7 @@ namespace lr1_embedded_sys
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label track4;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

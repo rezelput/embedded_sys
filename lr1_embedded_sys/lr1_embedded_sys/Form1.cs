@@ -219,7 +219,7 @@ namespace lr1_embedded_sys
             }
             catch(Exception exeption)
             {
-                MessageBox.Show(exeption.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               // MessageBox.Show(exeption.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -253,7 +253,7 @@ namespace lr1_embedded_sys
             }
             catch(Exception exeption)
             {
-                MessageBox.Show(exeption.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(exeption.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
 
@@ -270,10 +270,15 @@ namespace lr1_embedded_sys
             double teta = tet.Next(1, 10); //teta
             Random ttmpet = new Random();
             double tt = ttmpet.Next(1, 10);
-
-            double Tmp_num = tt + (Convert.ToDouble(tpBox.Text) - tt) * n * teta * 0.001;
-            temp_num.Value = Convert.ToInt32(Tmp_num);
-
+            try
+            {
+                double Tmp_num = tt + (Convert.ToDouble(tpBox.Text) - tt) * n * teta * 0.001;
+                temp_num.Value = Convert.ToInt32(Tmp_num);
+            }
+            catch
+            {
+                MessageBox.Show("Неккоректные значения!");
+            }
         }
 
         private void enbl_boiler_Click(object sender, EventArgs e)
@@ -373,13 +378,19 @@ namespace lr1_embedded_sys
             {
                 if(trackBar1.Value > 0)
                 send(Byte.Parse(trackBar1.Value.ToString()));
-                track4.Text = trackBar1.Value.ToString();
+                //track4.Text = trackBar1.Value.ToString();
             }
             catch
             {
                 MessageBox.Show("Ошибка!");
             }
             
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            this.Close();
         }
     }
 }

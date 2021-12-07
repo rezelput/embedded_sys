@@ -64,3 +64,21 @@ G:\My Drive\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\Л
 G:\My Drive\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.CopyComplete
 G:\My Drive\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.exe
 G:\My Drive\КУБГТУ\3 курс\1\ВСТРАИВАЕМЫЕ СИСТЕМЫ\ЛР\rezelput\embedded_sys\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.pdb
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Form1.resx
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\lr1_embedded_sys.exe.config
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\lr1_embedded_sys.exe
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\lr1_embedded_sys.pdb
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.FreeGlut.dll
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.OpenGl.dll
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.Platform.Windows.dll
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.FreeGlut.xml
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.OpenGl.xml
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\bin\Debug\Tao.Platform.Windows.xml
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.AssemblyReference.cache
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.LoadSAU.resources
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.Properties.Resources.resources
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.GenerateResource.cache
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.CoreCompileInputs.cache
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.csproj.CopyComplete
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.exe
+C:\Users\sofiy\Downloads\embedded_sys-main\lr1_embedded_sys\lr1_embedded_sys\obj\Debug\lr1_embedded_sys.pdb
