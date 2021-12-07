@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\lr1_embedded_sys",
+    "\\lr1_embedded_sys\\lr1_embedded_sys"
   ],
-  "SelectedNode": "\\lr1_embedded_sys.sln",
+  "SelectedNode": "\\lr1_embedded_sys\\lr1_embedded_sys\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

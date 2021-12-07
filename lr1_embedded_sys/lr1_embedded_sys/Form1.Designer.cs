@@ -30,10 +30,10 @@ namespace lr1_embedded_sys
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadSAU));
             this.prec_tem_pusk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@ namespace lr1_embedded_sys
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lb = new System.Windows.Forms.Label();
             this.MotorBox = new System.Windows.Forms.TextBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tpBox = new System.Windows.Forms.TextBox();
             this.barkl = new System.Windows.Forms.HScrollBar();
@@ -62,18 +63,22 @@ namespace lr1_embedded_sys
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.enbl_temp = new System.Windows.Forms.ToolStripMenuItem();
             this.enbl_boiler = new System.Windows.Forms.ToolStripMenuItem();
-            this.вклToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выклToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConnPort = new System.Windows.Forms.ToolStripMenuItem();
+            this.UpConn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.null_rowtt = new System.Windows.Forms.ErrorProvider(this.components);
             this.NBar = new System.Windows.Forms.HScrollBar();
             this.label8 = new System.Windows.Forms.Label();
             this.tm_prgrbar = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer_graph = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.BoxPort = new System.Windows.Forms.ComboBox();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.track4 = new System.Windows.Forms.Label();
             this.regul.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temp_num)).BeginInit();
@@ -133,9 +138,9 @@ namespace lr1_embedded_sys
             // 
             this.groupBox2.Controls.Add(this.lb);
             this.groupBox2.Controls.Add(this.MotorBox);
-            this.groupBox2.Location = new System.Drawing.Point(482, 196);
+            this.groupBox2.Location = new System.Drawing.Point(482, 263);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 109);
+            this.groupBox2.Size = new System.Drawing.Size(211, 100);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Мотор упарвления клапоном 5";
@@ -158,14 +163,26 @@ namespace lr1_embedded_sys
             this.MotorBox.TabIndex = 2;
             this.MotorBox.TextChanged += new System.EventHandler(this.MotorBox_TextChanged);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(6, 140);
+            this.trackBar1.Maximum = 180;
+            this.trackBar1.Minimum = -90;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(339, 45);
+            this.trackBar1.TabIndex = 4;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.track4);
+            this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Controls.Add(this.tpBox);
             this.groupBox1.Controls.Add(this.barkl);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(482, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(351, 137);
+            this.groupBox1.Size = new System.Drawing.Size(357, 204);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Топливный клапан 21";
@@ -186,6 +203,7 @@ namespace lr1_embedded_sys
             this.barkl.Name = "barkl";
             this.barkl.Size = new System.Drawing.Size(318, 20);
             this.barkl.TabIndex = 5;
+            this.barkl.Scroll += new System.Windows.Forms.ScrollEventHandler(this.barkl_Scroll);
             // 
             // label4
             // 
@@ -212,10 +230,15 @@ namespace lr1_embedded_sys
             // 
             this.temp_num.Location = new System.Drawing.Point(10, 53);
             this.temp_num.Maximum = new decimal(new int[] {
-            200,
+            500,
             0,
             0,
             0});
+            this.temp_num.Minimum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            -2147483648});
             this.temp_num.Name = "temp_num";
             this.temp_num.Size = new System.Drawing.Size(114, 20);
             this.temp_num.TabIndex = 4;
@@ -246,30 +269,30 @@ namespace lr1_embedded_sys
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
             this.chart1.Location = new System.Drawing.Point(27, 373);
             this.chart1.Name = "chart1";
-            series7.BorderWidth = 5;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Color = System.Drawing.Color.Lime;
-            series7.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series7.LabelForeColor = System.Drawing.Color.Tomato;
-            series7.Legend = "Legend1";
-            series7.MarkerBorderColor = System.Drawing.Color.Red;
-            series7.Name = "Входные";
-            series8.BorderWidth = 5;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Color = System.Drawing.Color.Red;
-            series8.Legend = "Legend1";
-            series8.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series8.Name = "Вывод";
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
+            series11.BorderWidth = 5;
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series11.Color = System.Drawing.Color.Lime;
+            series11.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series11.LabelForeColor = System.Drawing.Color.Tomato;
+            series11.Legend = "Legend1";
+            series11.MarkerBorderColor = System.Drawing.Color.Red;
+            series11.Name = "Входные";
+            series12.BorderWidth = 5;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Color = System.Drawing.Color.Red;
+            series12.Legend = "Legend1";
+            series12.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series12.Name = "Вывод";
+            this.chart1.Series.Add(series11);
+            this.chart1.Series.Add(series12);
             this.chart1.Size = new System.Drawing.Size(791, 306);
             this.chart1.TabIndex = 8;
             // 
@@ -351,26 +374,26 @@ namespace lr1_embedded_sys
             // enbl_boiler
             // 
             this.enbl_boiler.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.вклToolStripMenuItem,
-            this.выклToolStripMenuItem});
+            this.ConnPort,
+            this.UpConn});
             this.enbl_boiler.Name = "enbl_boiler";
             this.enbl_boiler.Size = new System.Drawing.Size(184, 22);
             this.enbl_boiler.Text = "Управление котлом";
             this.enbl_boiler.Click += new System.EventHandler(this.enbl_boiler_Click);
             // 
-            // вклToolStripMenuItem
+            // ConnPort
             // 
-            this.вклToolStripMenuItem.Name = "вклToolStripMenuItem";
-            this.вклToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.вклToolStripMenuItem.Text = "вкл";
-            this.вклToolStripMenuItem.Click += new System.EventHandler(this.вклToolStripMenuItem_Click);
+            this.ConnPort.Name = "ConnPort";
+            this.ConnPort.Size = new System.Drawing.Size(226, 22);
+            this.ConnPort.Text = "вкл";
+            this.ConnPort.Click += new System.EventHandler(this.вклToolStripMenuItem_Click);
             // 
-            // выклToolStripMenuItem
+            // UpConn
             // 
-            this.выклToolStripMenuItem.Name = "выклToolStripMenuItem";
-            this.выклToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.выклToolStripMenuItem.Text = "выкл";
-            this.выклToolStripMenuItem.Click += new System.EventHandler(this.выклToolStripMenuItem_Click);
+            this.UpConn.Name = "UpConn";
+            this.UpConn.Size = new System.Drawing.Size(226, 22);
+            this.UpConn.Text = "обновить доступные порты";
+            this.UpConn.Click += new System.EventHandler(this.UpConn_Click);
             // 
             // toolStrip1
             // 
@@ -384,6 +407,11 @@ namespace lr1_embedded_sys
             this.toolStrip1.Size = new System.Drawing.Size(1153, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // null_rowtt
             // 
@@ -419,16 +447,29 @@ namespace lr1_embedded_sys
             // 
             this.timer_graph.Tick += new System.EventHandler(this.timer_graph_Tick);
             // 
-            // toolStripSeparator2
+            // BoxPort
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.BoxPort.Enabled = false;
+            this.BoxPort.FormattingEnabled = true;
+            this.BoxPort.Location = new System.Drawing.Point(993, 3);
+            this.BoxPort.Name = "BoxPort";
+            this.BoxPort.Size = new System.Drawing.Size(148, 21);
+            this.BoxPort.TabIndex = 21;
+            // 
+            // track4
+            // 
+            this.track4.AutoSize = true;
+            this.track4.Location = new System.Drawing.Point(15, 185);
+            this.track4.Name = "track4";
+            this.track4.Size = new System.Drawing.Size(0, 13);
+            this.track4.TabIndex = 7;
             // 
             // LoadSAU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 701);
+            this.Controls.Add(this.BoxPort);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.NBar);
             this.Controls.Add(this.groupBox5);
@@ -447,6 +488,7 @@ namespace lr1_embedded_sys
             this.regul.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -493,13 +535,17 @@ namespace lr1_embedded_sys
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.HScrollBar NBar;
         private System.Windows.Forms.Timer tm_prgrbar;
-        private System.Windows.Forms.ToolStripMenuItem вклToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выклToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ConnPort;
         private System.Windows.Forms.HScrollBar barkl;
         private System.Windows.Forms.TextBox tpBox;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer_graph;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem UpConn;
+        private System.Windows.Forms.ComboBox BoxPort;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label track4;
     }
 }
 

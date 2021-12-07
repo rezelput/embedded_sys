@@ -14,15 +14,15 @@ namespace lr1_embedded_sys
 
         //double S = 2.0;
         //добавление порта
-        SerialPort port1 = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
+       // SerialPort port1 = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
 
         public void send(byte data)
         {
-            if (port1.IsOpen)
+            if (serialPort1.IsOpen)
             {
                 byte[] buffer = { 0 };
                 buffer[0] = data;
-                port1.Write(buffer, 0, 1);
+                serialPort1.Write(buffer, 0, 1);
             }
         }
         class InsertToList
@@ -229,13 +229,15 @@ namespace lr1_embedded_sys
            // temprt.Text = temp_num.Value.ToString();
         }
 
+
+        //расчет положения клапана
         private void tpBox_TextChanged(object sender, EventArgs e)
         {
             Random random = new Random();
             double n = random.Next(1, 10); //коэффициент n
             Random tet = new Random();
             double teta = tet.Next(1, 10); //teta
-            double T1 = Convert.ToDouble(temp_num.Value) + (Convert.ToDouble(MotorBox.Text) - Convert.ToDouble(temp_num.Value)) * n * teta;
+            double T1 = Convert.ToDouble(trackBar1.Value) + (Convert.ToDouble(MotorBox.Text) - Convert.ToDouble(temp_num.Value)) * n * teta;
             tpBox.Text = Convert.ToString(T1);
             try
             {
@@ -257,10 +259,21 @@ namespace lr1_embedded_sys
 
         }
 
+        //значение температуры
         private void temp_num_ValueChanged(object sender, EventArgs e)
         {
-           
-            
+            // tpBox.Text
+            //рандомы перемнных
+            Random random = new Random();
+            double n = random.Next(1, 10); //коэффициент n
+            Random tet = new Random();
+            double teta = tet.Next(1, 10); //teta
+            Random ttmpet = new Random();
+            double tt = ttmpet.Next(1, 10);
+
+            double Tmp_num = tt + (Convert.ToDouble(tpBox.Text) - tt) * n * teta * 0.001;
+            temp_num.Value = Convert.ToInt32(Tmp_num);
+
         }
 
         private void enbl_boiler_Click(object sender, EventArgs e)
@@ -270,14 +283,28 @@ namespace lr1_embedded_sys
 
         private void вклToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            port1.Open();
-            send(Byte.Parse(temp_num.Value.ToString()));
-        }
+            if (ConnPort.Text == "вкл")
+            {
+                try
+                {
+                    serialPort1.PortName = BoxPort.Text;
+                    serialPort1.Open();
+                    ConnPort.Text = "выкл";
+                }
+                catch
+                {
+                    MessageBox.Show("Нет доступных подключений");
+                }
+            }
 
-        private void выклToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            port1.Close();
-        }
+            else if (ConnPort.Text == "выкл")
+            {
+                serialPort1.Close();
+                BoxPort.Enabled = false;
+                ConnPort.Text = "вкл";
+            }
+         }
+
 
         private void TrackOC_Scroll(object sender, ScrollEventArgs e)
         {
@@ -319,6 +346,40 @@ namespace lr1_embedded_sys
             // chart1.Series[1].ChartType = SeriesChartType.Line;
 
 
+        }
+
+        private void UpConn_Click(object sender, EventArgs e)
+        {
+            BoxPort.Enabled = true;
+            string[] ports = SerialPort.GetPortNames();
+            BoxPort.Text = "";
+            BoxPort.Items.Clear();
+            if (ports.Length !=0)
+            {
+                BoxPort.Items.AddRange(ports);
+                BoxPort.SelectedIndex = 0;
+            }
+        }
+
+        private void barkl_Scroll(object sender, ScrollEventArgs e)
+        {
+            
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            //port1.Open();
+            try
+            {
+                if(trackBar1.Value > 0)
+                send(Byte.Parse(trackBar1.Value.ToString()));
+                track4.Text = trackBar1.Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка!");
+            }
+            
         }
     }
 }
